@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('sanciones', function (Blueprint $table) {
             $table->id();
+            $table->string('descripcion');
+            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
             $table->timestamps();
         });
     }
