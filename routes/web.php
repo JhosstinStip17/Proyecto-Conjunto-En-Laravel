@@ -1,5 +1,8 @@
 <?php
 
+
+
+use App\Http\Controllers\SancionesController;
 use App\Http\Controllers\ApartamentoController;
 use App\Http\Controllers\ConjuntoController;
 use App\Http\Controllers\TorreController;
@@ -52,3 +55,15 @@ Route::get('usuario/{usuario}/edit', [UsuarioController::class, 'edit'])->name('
 Route::post('usuario', [UsuarioController::class, 'store'])->name('usuario.store');
 Route::put('usuario/{usuario}', [UsuarioController::class,'update'])->name('usuario.update');
 Route::get('usuario/{usuario}/delete', [UsuarioController::class, 'destroy'])->name('usuario.delete');
+
+// RUTAS DEL CRUD DE SANCION '
+
+Route::get('sancion', [SancionesController::class,'index'])->name('sancion.index');
+Route::get('sancion/create', [SancionesController::class,'create'])->name('sancion.create');
+Route::get('sancion/{sancion}/edit', [SancionesController::class, 'edit'])->name('sancion.edit');
+Route::post('sancion', [SancionesController::class, 'store'])->name('sancion.store');
+Route::put('sancion/{sancion}', [SancionesController::class,'update'])->name('sancion.update');
+Route::get('sancion/{sancion}/delete', [SancionesController::class, 'destroy'])->name('sancion.delete');
+
+
+
