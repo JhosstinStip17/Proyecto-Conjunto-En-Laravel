@@ -41,7 +41,7 @@ class SancionesController extends Controller
     }
 
     
-    public function edit(Sanciones $sanciones)
+    public function edit(Sanciones $sancion)
     {
         //
     }
@@ -55,9 +55,9 @@ class SancionesController extends Controller
 
     
     
-    public function destroy(Sanciones $sanciones)
+    public function destroy(Sanciones $sancion)
     {
-        $sanciones->delete();
+        $sancion->delete();
         return to_route("sancion.index")->with("success","ELIMINADO CORRECTAMENTE");
     }
 }
