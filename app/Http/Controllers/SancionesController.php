@@ -1,9 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Torre;
+use App\Models\Apartamento;
 use App\Models\Sanciones;
+use App\Models\Usuario;
+use App\Models\Usuarios;
 use Illuminate\Http\Request;
+
+
 
 class SancionesController extends Controller
 {
@@ -25,7 +30,9 @@ class SancionesController extends Controller
      */
     public function create()
     {
-        //
+        $apartamentos = Apartamento::with("torre", "conjunto")->get();
+        $usuarios = Usuario::with("conjunto")->get();
+        return view("sancion.create", compact("usuarios"));
     }
 
     /**
@@ -36,7 +43,8 @@ class SancionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Sanciones::create($request->all());
+        return to_route("sancion.index")->with("success", "CREADO CORRECTAMENTE");
     }
 
     /**

@@ -22,17 +22,19 @@
         @endif
         <br>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Nombre de la sancion</span>
-            <input type="text" name="nombre" value="{{old('nombre')}}" class="form-control"
+            <span class="input-group-text" id="inputGroup-sizing-default"> Sancion</span>
+            <input type="text" name="descripcion" value="{{old('descripcion')}}" class="form-control"
                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
         <label for="usuario_id">usuario</label>
         <select class="form-select" aria-label="Default select example" name="usuario_id" id="usuario_id"
             onchange="updateTorres()">
+            
             @foreach ($usuarios as $usuario)
-                <option value="{{$usuario->id}}">{{$usuario->nombre}} - {{$usuario->torre->nombre}} - {{$usuario->torre->conjunto->nombre}}</option>
+                <option value="{{$usuario->id}}">{{$usuario->nombre}} - {{$usuario->apartamento->torre->conjunto->nombre}} - {{$usuario->apartamento->torre->conjunto->nombre}}</option>
             @endforeach
         </select>
+       
         <br>
 
 
