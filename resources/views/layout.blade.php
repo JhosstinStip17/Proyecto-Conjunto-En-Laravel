@@ -32,6 +32,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('usuario.index')}}">Usuarios</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('sancion.index')}}">Sanciones</a>
+                        </li>
                     </ul>
                 </div>
             </div>
