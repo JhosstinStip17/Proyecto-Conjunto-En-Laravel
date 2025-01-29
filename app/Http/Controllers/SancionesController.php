@@ -14,7 +14,8 @@ class SancionesController extends Controller
      */
     public function index()
     {
-        //
+        $sanciones = Sanciones::all();
+        return view("sancion.index", compact("sanciones"));
     }
 
     /**

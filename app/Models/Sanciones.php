@@ -18,4 +18,14 @@ class Sanciones extends Model
         return $this->belongsTo(Usuario::class,"usuario_id", "id");
     }
 
+    public function apartamento()
+    {
+        return $this->belongsTo(Apartamento::class, 'apartamento_id', 'id');
+    }
+
+    public function torre()
+    {
+        return $this->belongsTo(Torre::class,'torre_id','id');
+    }
+
 }
