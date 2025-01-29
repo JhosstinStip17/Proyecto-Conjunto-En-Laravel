@@ -1,50 +1,50 @@
 @extends('layout')
 
-@section('title', 'Usuarios')
+@section('title', 'Sanciones')
 
 @section('content')
 
-<h1 class="text-center">Usuarios</h1>
+<h1 class="text-center">Sanciones</h1>
 
 @if (session('success'))
     <p>{{session('success')}}</p>
 @endif
 
 <br>
-<button class="btn btn-primary"><a href="{{route('usuario.create')}}"
-        class="link-light link-offset-2 link-underline link-underline-opacity-0">Crear Usuario</a></button>
+<button class="btn btn-primary"><a href="{{route('sancion.create')}}"
+        class="link-light link-offset-2 link-underline link-underline-opacity-0">Crear una sancion</a></button>
 <br><br>
-<form class="d-inline-flex p-2" role="search" action="{{route('usuario.index')}}" method="GET">
-    <input class="form-control me-2" type="search" placeholder="Buscar usuario...." name="search" aria-label="Search"
+<!-- <form class="d-inline-flex p-2" role="search" action="{{route('sancion.index')}}" method="GET">
+    <input class="form-control me-2" type="search" placeholder="Buscar sancion...." name="search" aria-label="Search"
         value="{{request('search')}}">
     <button class="btn btn-outline-success" type="submit">Buscar</button>
-</form>
+</form> -->
 
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Usuario</th>
             <th>Apartamento</th>
             <th>Torre</th>
-            <th>Conjunto</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
 
-        @foreach ($usuarios as $usuario)
+        @foreach ($sanciones as $sancion)
             <tr>
-                <td>{{$usuario->id}}</td>
-                <td>{{$usuario->nombre}}</td>
-                <td>{{$usuario->apartamento->nombre}}</td>
-                <th>{{$usuario->apartamento->torre->nombre}}</th>
-                <th>{{$usuario->apartamento->torre->conjunto->nombre}}</th>
+                <td>{{$sancion->id}}</td>
+                <td>{{$sancion->descripcion}}</td>
+                <td>{{$sancion->usuario->nombre}}</td>
+                <th>{{$sancion->usuario->apartamento->nombre}}</th>
+                <th>{{$sancion->usuario->apartamento->torre->nombre}}</th>
                 <td>
-                    <button class="btn btn-success"><a href="{{route('usuario.edit', $usuario)}}"
+                    <button class="btn btn-success"><a href="{{route('sancion.edit', $sancion)}}"
                             class="link-light link-offset-2 link-underline link-underline-opacity-0">Editar</a></button>
-                    <button class="btn btn-danger"><a href="{{route('usuario.delete', $usuario)}}"
+                    <button class="btn btn-danger"><a href="{{route('sancion.delete', $sancion)}}"
                             class="link-light link-offset-2 link-underline link-underline-opacity-0"
                             onclick="return confirm('Seguro de Eliminar')">Eliminar</a></button>
                 </td>
