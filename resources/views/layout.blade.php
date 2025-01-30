@@ -36,7 +36,10 @@
                             <a class="nav-link" href="{{route('sancion.index')}}">Sanciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('parqueadero.index')}}">parqueadero</a>
+                            <a class="nav-link" href="{{route('parqueadero.index')}}">Parqueadero</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('puesto.index')}}">Puestos</a>
                         </li>
                     </ul>
                 </div>
