@@ -27,11 +27,10 @@
                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
         <label for="usuario_id">usuario</label>
-        <select class="form-select" aria-label="Default select example" name="usuario_id" id="usuario_id"
-            onchange="updateTorres()">
+        <select class="form-select" aria-label="Default select example" name="usuario_id" id="usuario_id">
             
             @foreach ($usuarios as $usuario)
-                <option value="{{$usuario->id}}">{{$usuario->nombre}} - {{$usuario->apartamento->torre->conjunto->nombre}} - {{$usuario->apartamento->torre->conjunto->nombre}}</option>
+                <option value="{{$usuario->id}}">{{$usuario->nombre}} - {{$usuario->apartamento->nombre}} - {{$usuario->apartamento->torre->nombre}} - {{$usuario->apartamento->torre->conjunto->nombre}}</option>
             @endforeach
         </select>
        

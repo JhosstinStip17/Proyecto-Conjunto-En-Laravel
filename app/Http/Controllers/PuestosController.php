@@ -16,8 +16,8 @@ class PuestosController extends Controller
      */
     public function index()
     {
-        $puestos = Puestos::all();
-        $usuarios = Usuario::all();
+        $puestos = Puestos::with("parqueadero")->get();
+        $usuarios = Usuario::with("apartamento")->get();
         return view("puesto.index", compact("puestos"), ["usuarios"=> $usuarios]);
     }
 
