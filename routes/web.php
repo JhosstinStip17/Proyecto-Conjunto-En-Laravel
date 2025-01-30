@@ -5,6 +5,7 @@
 use App\Http\Controllers\SancionesController;
 use App\Http\Controllers\ApartamentoController;
 use App\Http\Controllers\ConjuntoController;
+use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\TorreController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
@@ -65,5 +66,7 @@ Route::post('sancion', [SancionesController::class, 'store'])->name('sancion.sto
 Route::put('sancion/{sancion}', [SancionesController::class,'update'])->name('sancion.update');
 Route::get('sancion/{sancion}/delete', [SancionesController::class, 'destroy'])->name('sancion.delete');
 
+//RUTAS DE PARQUEADERO
 
+Route::get('parqueadero', [ParqueaderoController::class, 'index'])->name('parqueadero.index');
 
