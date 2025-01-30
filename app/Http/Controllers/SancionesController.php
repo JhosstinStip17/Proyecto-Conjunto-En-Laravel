@@ -43,13 +43,14 @@ class SancionesController extends Controller
     
     public function edit(Sanciones $sancion)
     {
-        //
+        $usuarios = Usuario::all();
+        return view('sancion.edit', compact('sancion'), ['usuarios' => $usuarios]);
     }
 
     
-    public function update(Request $request, Sanciones $sanciones)
+    public function update(Request $request, Sanciones $sancion)
     {
-        $sanciones->update($request->all());
+        $sancion->update($request->all());
         return to_route("sancion.index")->with("success","EDITADO CORRECTAMENTE");
     }
 

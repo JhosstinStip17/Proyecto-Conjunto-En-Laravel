@@ -8,6 +8,7 @@ use App\Http\Controllers\ConjuntoController;
 use App\Http\Controllers\ParqueaderoController;
 use App\Http\Controllers\TorreController;
 use App\Http\Controllers\UsuarioController;
+use App\Models\Parqueadero;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,4 +72,6 @@ Route::get('sancion/{sancion}/delete', [SancionesController::class, 'destroy'])-
 Route::get('parqueadero', [ParqueaderoController::class, 'index'])->name('parqueadero.index');
 Route::get('parqueadero/create' , [ParqueaderoController::class,'create'])->name('parqueadero.create');
 Route::post('parqueadero', [ParqueaderoController::class,'store'])->name('parqueadero.store');
-
+Route::get('parqueadero/{parqueadero}/edit', [ParqueaderoController::class, 'edit'])->name('parqueadero.edit');
+Route::put('parqueadero/{parqueadero}', [ParqueaderoController::class,'update'])->name('parqueadero.update');
+Route::get('parqueadero/{parqueadero}/delete', [ParqueaderoController::class, 'destroy'])->name('parqueadero.delete');

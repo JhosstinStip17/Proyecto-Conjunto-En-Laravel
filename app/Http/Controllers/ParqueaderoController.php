@@ -61,7 +61,8 @@ class ParqueaderoController extends Controller
      */
     public function edit(Parqueadero $parqueadero)
     {
-        //
+        $conjuntos = conjunto::all();
+        return view('parqueadero.edit', compact('parqueadero'), ['conjuntos' => $conjuntos]);
     }
 
     /**
@@ -73,7 +74,8 @@ class ParqueaderoController extends Controller
      */
     public function update(Request $request, Parqueadero $parqueadero)
     {
-        //
+        $parqueadero->update($request->all());
+        return to_route('parqueadero.index')->with('success','EDITADO CORRECTAMENTE');
     }
 
     /**
@@ -84,6 +86,8 @@ class ParqueaderoController extends Controller
      */
     public function destroy(Parqueadero $parqueadero)
     {
-        //
+        $parqueadero->delete();
+        return to_route('parqueadero.index')->with('success','ELIMINADO CORRECTAMENTE');
+    
     }
 }
