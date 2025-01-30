@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Parqueadero;
 use App\Models\Puestos;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
@@ -23,8 +24,10 @@ class PuestosController extends Controller
     
     public function create()
     {
-        //
-    }
+        $parqueaderos = Parqueadero::all(); 
+        $usuarios = Usuario::all();
+         return view('puesto.create', compact ('parqueaderos'), ['usuarios'=> $usuarios]);
+    }                
 
     
     public function store(Request $request)
