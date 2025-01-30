@@ -6,6 +6,7 @@ use App\Http\Controllers\SancionesController;
 use App\Http\Controllers\ApartamentoController;
 use App\Http\Controllers\ConjuntoController;
 use App\Http\Controllers\ParqueaderoController;
+use App\Http\Controllers\PuestosController;
 use App\Http\Controllers\TorreController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\Parqueadero;
@@ -75,3 +76,13 @@ Route::post('parqueadero', [ParqueaderoController::class,'store'])->name('parque
 Route::get('parqueadero/{parqueadero}/edit', [ParqueaderoController::class, 'edit'])->name('parqueadero.edit');
 Route::put('parqueadero/{parqueadero}', [ParqueaderoController::class,'update'])->name('parqueadero.update');
 Route::get('parqueadero/{parqueadero}/delete', [ParqueaderoController::class, 'destroy'])->name('parqueadero.delete');
+
+
+//RUTAS DE PUESTOS
+
+Route::get('puesto', [PuestosController::class, 'index'])->name('puesto.index');
+Route::get('puesto/create' , [PuestosController::class,'create'])->name('puesto.create');
+Route::post('puesto', [PuestosController::class,'store'])->name('puesto.store');
+Route::get('puesto/{puesto}/edit', [PuestosController::class, 'edit'])->name('puesto.edit');
+Route::put('puesto/{puesto}', [PuestosController::class,'update'])->name('puesto.update');
+Route::get('puesto/{puesto}/delete', [PuestosController::class, 'destroy'])->name('puesto.delete');
