@@ -3,6 +3,8 @@
 @section ('content')
 
 <h1>Parqueaderos</h1>
+
+<a href="{{route('parqueadero.create')}}">Crear un Parqueadero</a>
 <table>
     <thead>
         <tr>

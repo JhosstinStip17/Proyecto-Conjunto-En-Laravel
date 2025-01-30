@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\conjunto;
 use App\Models\Parqueadero;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class ParqueaderoController extends Controller
      */
     public function create()
     {
-        //
+        $conjuntos = conjunto::all();
+        return view("parqueadero.create", compact("conjuntos"));
     }
 
     /**
@@ -36,7 +38,8 @@ class ParqueaderoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Parqueadero::create($request->all());
+        return to_route("parqueadero.index")->with("success","INGRESA CORRECTAMENTE");
     }
 
     /**

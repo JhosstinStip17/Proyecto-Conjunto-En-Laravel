@@ -69,4 +69,6 @@ Route::get('sancion/{sancion}/delete', [SancionesController::class, 'destroy'])-
 //RUTAS DE PARQUEADERO
 
 Route::get('parqueadero', [ParqueaderoController::class, 'index'])->name('parqueadero.index');
+Route::get('parqueadero/create' , [ParqueaderoController::class,'create'])->name('parqueadero.create');
+Route::post('parqueadero', [ParqueaderoController::class,'store'])->name('parqueadero.store');
 
