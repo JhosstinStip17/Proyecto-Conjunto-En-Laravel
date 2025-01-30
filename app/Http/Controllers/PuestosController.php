@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Parqueadero;
 use App\Models\Puestos;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
@@ -15,8 +16,8 @@ class PuestosController extends Controller
      */
     public function index()
     {
-        $puestos = Puestos::all();
-        $usuarios = Usuario::all();
+        $puestos = Puestos::with("parqueadero")->get();
+        $usuarios = Usuario::with("apartamento")->get();
         return view("puesto.index", compact("puestos"), ["usuarios"=> $usuarios]);
     }
 
